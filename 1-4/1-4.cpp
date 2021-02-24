@@ -1,54 +1,55 @@
 #include <iostream>
-#include <cctype> //¥H¤U¬°¨Ï¥Î¨ç¼Æ
+#include <cctype> //ä»¥ä¸‹ç‚ºä½¿ç”¨å‡½æ•¸
  
-/*  ¨ç¼Æ        ªğ¦^­È 
-    isalpha()	¦pªG¤Ş¼Æ¬O¦r¥À¡A¸Ó¨ç¦¡ªğ¦^¯u
-    tolower()	¦pªG¤Ş¼Æ¬O¤j¼g¦r¤¸¡A«hªğ¦^¨ä¤p¼g¡A§_«hªğ¦^¸Ó¤Ş¼Æ
+/*  å‡½æ•¸        è¿”å›å€¼ 
+    isalpha()	å¦‚æœå¼•æ•¸æ˜¯å­—æ¯ï¼Œè©²å‡½å¼è¿”å›çœŸ
+    tolower()	å¦‚æœå¼•æ•¸æ˜¯å¤§å¯«å­—å…ƒï¼Œå‰‡è¿”å›å…¶å°å¯«ï¼Œå¦å‰‡è¿”å›è©²å¼•æ•¸
 */ 
 
 #include <sstream> 
 /*
-  strstreamÃş¦P®É¥i¥H¤ä´©C­·®æªº¦ê¬yªº¿é¤J¿é¥X¾Ş§@
-  stringstream«h¬O±qiostream(¿é¤J¿é¥X¬yÃş)©M©Mstringstreambase¡]c++¦r¦ê¬y°òÃş¡^¬£¥Í¦Ó¨Ó
-  stringstreamªº«Øºc¨ç¦¡­ì§Î¦p¤U¡G 
+  strstreamé¡åŒæ™‚å¯ä»¥æ”¯æ´Cé¢¨æ ¼çš„ä¸²æµçš„è¼¸å…¥è¼¸å‡ºæ“ä½œ
+  stringstreamå‰‡æ˜¯å¾iostream(è¼¸å…¥è¼¸å‡ºæµé¡)å’Œå’Œstringstreambaseï¼ˆc++å­—ä¸²æµåŸºé¡ï¼‰æ´¾ç”Ÿè€Œä¾†
+  stringstreamçš„å»ºæ§‹å‡½å¼åŸå½¢å¦‚ä¸‹ï¼š 
   stringstream::stringstream(string str);   
 */
 using namespace std;
 int main() {
-	string s,tmp; //«Å§i®æ¦¡¡Gstring ÅÜ¼Æ¦WºÙ;
-	while(getline(cin,s)){   //getline(cin,s) >>Åª¨ú³o¤@¦æ 
+	string s,tmp; //å®£å‘Šæ ¼å¼ï¼šstring è®Šæ•¸åç¨±;
+	while(getline(cin,s)){   //getline(cin,s) >>è®€å–é€™ä¸€è¡Œ 
 	/*
-	  ¦]¬°¦^¨®¿é¤Jªº¬O¤@­Ó´«¦æ²Å¡A¬Û·í©ó¥t°_¤@¦æ¡A
-	  ©Ò¥Hgetline()·|§â³o­ÓªÅ¦æÅª¨ìs¸Ì­±¥h¡A§A³Ì«á¿é¥Xªº·íµM´N¬O¤@­ÓªÅ¦æ¡C	
-	  while(geline(cin,s))³o­Ó»y¥yªº°õ¦æ¹Lµ{¬O³o¼Ëªº¡G
-      ¥ı½Õ¥Îgetline()¨ç¼Æ¡Agetline()±Nistream cin¤¤ªº¤º®eÅª¨ú¤@¦æ¡]§A¿é¤Jªº¬Ohello world)¡A
-      «O¦s¶istring s¤¤¡A¦Ógetline()ªºªğ¦^­È´N¬Ocin
-      hello world³QÅª¤Js¡A´«¦æ«áªºªÅ¦æ³QÅª¤Js¡A¥½ºİ¼Ğ»xeof¨Ïcin¬°µL®Äª¬ºA¡Awhile()§PÂ_¬°°²¡A´`Àô°h¥X¡C
+	  å› ç‚ºå›è»Šè¼¸å…¥çš„æ˜¯ä¸€å€‹æ›è¡Œç¬¦ï¼Œç›¸ç•¶æ–¼å¦èµ·ä¸€è¡Œï¼Œ
+	  æ‰€ä»¥getline()æœƒæŠŠé€™å€‹ç©ºè¡Œè®€åˆ°sè£¡é¢å»ï¼Œä½ æœ€å¾Œè¼¸å‡ºçš„ç•¶ç„¶å°±æ˜¯ä¸€å€‹ç©ºè¡Œã€‚	
+	  while(geline(cin,s))é€™å€‹èªå¥çš„åŸ·è¡Œéç¨‹æ˜¯é€™æ¨£çš„ï¼š
+      å…ˆèª¿ç”¨getline()å‡½æ•¸ï¼Œgetline()å°‡istream cinä¸­çš„å…§å®¹è®€å–ä¸€è¡Œï¼ˆä½ è¼¸å…¥çš„æ˜¯hello world)ï¼Œ
+      ä¿å­˜é€²string sä¸­ï¼Œè€Œgetline()çš„è¿”å›å€¼å°±æ˜¯cin
+      hello worldè¢«è®€å…¥sï¼Œæ›è¡Œå¾Œçš„ç©ºè¡Œè¢«è®€å…¥sï¼Œæœ«ç«¯æ¨™èªŒeofä½¿cinç‚ºç„¡æ•ˆç‹€æ…‹ï¼Œwhile()åˆ¤æ–·ç‚ºå‡ï¼Œå¾ªç’°é€€å‡ºã€‚
     */
-      for(int i=0;i<=s.length();i++){ //±Nsªº¨C­Ó¦r¤¸¨ú¥X
+      for(int i=0;i<=s.length();i++){ //å°‡sçš„æ¯å€‹å­—å…ƒå–å‡º
     /*  string str="0123456789";
-        cout < <"str.length()="<<str.length()<<endl;//µ²ªG¬°10
-        length()¬O¦]¬°ªu¥ÎC»y¨¥ªº²ßºD¦Ó«O¯d¤U¨Óªº¡AstringÃş³Ìªì¥u¦³length()¡A
-		¤Ş¤JSTL¤§«á¡A¬°¤F­İ®e¤S¥[¤J¤Fsize()¡A¥¦¬O§@¬°STL®e¾¹ªºÄİ©Ê¦s¦bªº¡A«K©ó²Å¦XSTLªº±µ¤f³W«h¡A
-		¥H«K¥Î©óSTLªººâªk,stringÃşªºlength()¤èªkªğ¦^ªº¬O¦r¸`¼Æ¡A¤£ºŞ¬O§_¦³º~¦r¡C
+        cout < <"str.length()="<<str.length()<<endl;//çµæœç‚º10
+        length()æ˜¯å› ç‚ºæ²¿ç”¨Cèªè¨€çš„ç¿’æ…£è€Œä¿ç•™ä¸‹ä¾†çš„ï¼Œstringé¡æœ€åˆåªæœ‰length()ï¼Œ
+		å¼•å…¥STLä¹‹å¾Œï¼Œç‚ºäº†å…¼å®¹åˆåŠ å…¥äº†size()ï¼Œå®ƒæ˜¯ä½œç‚ºSTLå®¹å™¨çš„å±¬æ€§å­˜åœ¨çš„ï¼Œä¾¿æ–¼ç¬¦åˆSTLçš„æ¥å£è¦å‰‡ï¼Œ
+		ä»¥ä¾¿ç”¨æ–¼STLçš„ç®—æ³•,stringé¡çš„length()æ–¹æ³•è¿”å›çš„æ˜¯å­—ç¯€æ•¸ï¼Œä¸ç®¡æ˜¯å¦æœ‰æ¼¢å­—ã€‚
 	*/
-	if(isalpha(s[i])){ //ctype.h ªº¨ç¼Æ isalpha() ´ú¸Õ°Ñ¼Æ¬O§_¬°¦r¥À¡Aº¡¨¬±ø¥ó¦^¶Ç«D 0 ªº­È ¡C
+	if(isalpha(s[i])){ //ctype.h çš„å‡½æ•¸ isalpha() æ¸¬è©¦åƒæ•¸æ˜¯å¦ç‚ºå­—æ¯ï¼Œæ»¿è¶³æ¢ä»¶å›å‚³é 0 çš„å€¼ ã€‚
     s[i]=tolower(s[i]);
     /* 
-       ³o­Ó¨ç¼Æªğ¦^¤p¼g¬Û·í©óc¡A¦pªG¦s¦bªº­È¡A§_«hc«O«ù¤£ÅÜ¡Cªğ¦^­È¥i¥HÁô¦¡char¬°int­È¡C
-	   Án©ú¨ç¼Æ>> int tolower(int c);
+       é€™å€‹å‡½æ•¸è¿”å›å°å¯«ç›¸ç•¶æ–¼cï¼Œå¦‚æœå­˜åœ¨çš„å€¼ï¼Œå¦å‰‡cä¿æŒä¸è®Šã€‚è¿”å›å€¼å¯ä»¥éš±å¼charç‚ºintå€¼ã€‚
+	   è²æ˜å‡½æ•¸>> int tolower(int c);
 	*/
 	
 	}else{
-		s[i]=' ';//§_«h§ï¬°ªÅ¥Õ¦r¤¸ 
+		s[i]=' ';//å¦å‰‡æ”¹ç‚ºç©ºç™½å­—å…ƒ 
 		
 	}
       	
 	  }
-	  stringstream ss(s); ////«Øºc¨ç¦¡ªì©l¤Æ
-	  while(ss>>tmp){ //ss¿é¤J¨ìtmp¡A§Q¥ÎªÅ¥Õ¦r¤¸¶i¦æ¦r¦ê¤Á³Î¡A¨C¤p¬q¦r¦êtmp¥i¥H¸g¥ÑcoutÅã¥Ü¨ì¿Ã¹õ 
+	  stringstream ss(s); ////å»ºæ§‹å‡½å¼åˆå§‹åŒ–
+	  while(ss>>tmp){ //ssè¼¸å…¥åˆ°tmpï¼Œåˆ©ç”¨ç©ºç™½å­—å…ƒé€²è¡Œå­—ä¸²åˆ‡å‰²ï¼Œæ¯å°æ®µå­—ä¸²tmpå¯ä»¥ç¶“ç”±couté¡¯ç¤ºåˆ°è¢å¹• 
 	  	cout<<tmp<<endl;
 	  	
 	  }
 	}
 }
+
