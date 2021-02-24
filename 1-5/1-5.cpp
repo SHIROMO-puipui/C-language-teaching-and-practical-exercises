@@ -4,17 +4,17 @@ using namespace std;
 int main() {
 	int i,j,k=0;
 	int flag=1;
-	cout<<"prime number between 2 to 1000\n";//   \n¬°¸õ¦æ 
-	for(i=2; i<=1000; i++){//i++>>i=i+1  //³Ì¥~¼h°j°é 
+	cout<<"prime number between 2 to 1000\n";//   \nç‚ºè·³è¡Œ 
+	for(i=2; i<=1000; i++){//i++>>i=i+1  //æœ€å¤–å±¤è¿´åœˆ 
 		flag=1;           
-		for(j=2; j<i-1; j++) { //²Ä2¼h°j°é //°j°é¤¤ªºifµ²§ô¤~¸õ¥X2¼h°j°é 
+		for(j=2; j<i-1; j++) { //ç¬¬2å±¤è¿´åœˆ //è¿´åœˆä¸­çš„ifçµæŸæ‰è·³å‡º2å±¤è¿´åœˆ 
 			if(i%j==0){
 				flag=0;
-			break; //¸õ¥X°j°é¤£°õ¦æ²Ä2­Óif 
+			break; //è·³å‡ºè¿´åœˆä¸åŸ·è¡Œç¬¬2å€‹if 
 			}
 		}
 		if(flag==1){
-		cout.width(5);//¦r¤¸¼e«×5 
+		cout.width(5);//å­—å…ƒå¯¬åº¦5 
 		cout<< i;
 		k++;//k=k+1
 		if(k%10==0)
@@ -28,3 +28,4 @@ int main() {
 	return 0;
 	 
 }
+
