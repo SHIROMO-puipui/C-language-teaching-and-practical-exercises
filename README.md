@@ -1,0 +1,2 @@
+# C-language-teaching-and-practical-exercises
+Here, you can learn about C++. Even if you are a beginner, you can understand why the title is written like this. I will write a comment next to the program. I hope you will not forget to do it yourself while watching it. Impression, I believe that everyone can learn C language well as long as they follow along, understand the requirements of the topic, and accumulate slowly.
