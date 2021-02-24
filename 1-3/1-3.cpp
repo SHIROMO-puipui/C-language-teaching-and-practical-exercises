@@ -1,99 +1,100 @@
 #include <iostream> 
-#include <stdlib.h> //¨Ï¥Îrand() 
-#include <time.h> //¨Ï¥Î time()
+#include <stdlib.h> //ä½¿ç”¨rand() 
+#include <time.h> //ä½¿ç”¨ time()
 using namespace std;
 int main() {
 	int a,b;
 	char *a1,*b1,*r;
 	
-	//¦b´Ì¤º¦s¤¤©w¸q¤@­Óchar *«¬ªºÅÜ¶q¡A¤º®e¬°¦r²Å¦ê¡§a1¡Bb1¡Br¡¨ªº­º¦a§}
-//¦ı¬O¦r²Å¦ê¡§a1¡Bb1¡Br¡¨ªº¤º®e¦s¦b©ó±`¶q°Ï¡A¤º®e¤£¥iÅÜ¡A
-//¦b½sÄ¶ªº®É­Ô´N¤w¸g½T©w¤º®e¡C¹B¦æ³t«×ºC¡C
+	//åœ¨æ£§å…§å­˜ä¸­å®šç¾©ä¸€å€‹char *å‹çš„è®Šé‡ï¼Œå…§å®¹ç‚ºå­—ç¬¦ä¸²â€œa1ã€b1ã€râ€çš„é¦–åœ°å€
+//ä½†æ˜¯å­—ç¬¦ä¸²â€œa1ã€b1ã€râ€çš„å…§å®¹å­˜åœ¨æ–¼å¸¸é‡å€ï¼Œå…§å®¹ä¸å¯è®Šï¼Œ
+//åœ¨ç·¨è­¯çš„æ™‚å€™å°±å·²ç¶“ç¢ºå®šå…§å®¹ã€‚é‹è¡Œé€Ÿåº¦æ…¢ã€‚
 /*   
-     ¸É¥R>> 
-	 char *str="test";       //«ü¼Ğ
-:    char str[] = "test";    //°}¦C
-:    ­º¥ı "test" ¬O const char[] ªº¤@­Ó±`¼Æ­È, ·|³Q©ñ¨ì°ßÅª°Ï°ì
+     è£œå……>> 
+	 char *str="test";       //æŒ‡æ¨™
+:    char str[] = "test";    //é™£åˆ—
+:    é¦–å…ˆ "test" æ˜¯ const char[] çš„ä¸€å€‹å¸¸æ•¸å€¼, æœƒè¢«æ”¾åˆ°å”¯è®€å€åŸŸ
 */   
 
-	time_t t;    //»İ­n«Å§i#include <time.h>
+	time_t t;    //éœ€è¦å®£å‘Š#include <time.h>
 	/*
-   time()¨ç¼Æ
+   time()å‡½æ•¸
 
-   ¸Ó¨ç¼Æ§@¥Î¬OÀò¨ú¨t²Î®É¶¡¡C
+   è©²å‡½æ•¸ä½œç”¨æ˜¯ç²å–ç³»çµ±æ™‚é–“ã€‚
 
-   ¨ä¤@¯ë§Î¦¡¬°
+   å…¶ä¸€èˆ¬å½¢å¼ç‚º
 
-   time_t time(time_t *t)¡F
+   time_t time(time_t *t)ï¼›
 
-   ¨ä¤¤time_t¤]´N¬Oªø¾ã«¬long¡A©w¸q¡Gtypedef long time_t¡F
+   å…¶ä¸­time_tä¹Ÿå°±æ˜¯é•·æ•´å‹longï¼Œå®šç¾©ï¼štypedef long time_tï¼›
    */
    
-	srand((unsigned)time(&t));//ÀH¾÷¿ï¨ú¶Ã¼Æ°_ÂI¡A ­Y¥¼¨Ï¥Î¦¹«ü¥O¡A¨C¦¸¶Ã¼Æ°_ÂI³£¬Û¦P 
+	srand((unsigned)time(&t));//éš¨æ©Ÿé¸å–äº‚æ•¸èµ·é»ï¼Œ è‹¥æœªä½¿ç”¨æ­¤æŒ‡ä»¤ï¼Œæ¯æ¬¡äº‚æ•¸èµ·é»éƒ½ç›¸åŒ 
 	 /*
-       C®w¨ç¼Ævoid srand(unsigned int seed)
-	    ºØ¤lrand¨ç¼Æ©Ò¨Ï¥ÎªºÀH¾÷¼Æµo¥Í¾¹¡C
-	    void srand(unsigned int seed) >>srand()¨ç¼ÆÁn©ú
-		seed -- ³o¬O¤@­Ó¾ã¼Æªº­È³Q¥Î¨Ó§@¬°ºØ¤l¥Ñ°°ÀH¾÷¼Æ¥Í¦¨¾¹ºâªk
+       Cåº«å‡½æ•¸void srand(unsigned int seed)
+	    ç¨®å­randå‡½æ•¸æ‰€ä½¿ç”¨çš„éš¨æ©Ÿæ•¸ç™¼ç”Ÿå™¨ã€‚
+	    void srand(unsigned int seed) >>srand()å‡½æ•¸è²æ˜
+		seed -- é€™æ˜¯ä¸€å€‹æ•´æ•¸çš„å€¼è¢«ç”¨ä¾†ä½œç‚ºç¨®å­ç”±å½éš¨æ©Ÿæ•¸ç”Ÿæˆå™¨ç®—æ³•
 	*/
 	
-	cout<< "input 0(°Å¤M) 1(¥ÛÀY) 2(¥¬) :";
+	cout<< "input 0(å‰ªåˆ€) 1(çŸ³é ­) 2(å¸ƒ) :";
 	cin>>a;	 
-	b=rand()%3;//²£¥Í²q®±¶Ã¼Æ(0¡B1¡B2)
+	b=rand()%3;//ç”¢ç”ŸçŒœæ‹³äº‚æ•¸(0ã€1ã€2)
 	switch (a){
 		case 0:
-			a1="°Å¤M";
+			a1="å‰ªåˆ€";
 			switch(b){
 				case 0:
-					b1="°Å¤M";
-					r ="¥­¤â" ;
+					b1="å‰ªåˆ€";
+					r ="å¹³æ‰‹" ;
 					break;					
 				case 1:
-					b1="¥ÛÀY";
-					r ="¹q¸£Ä¹" ;
+					b1="çŸ³é ­";
+					r ="é›»è…¦è´" ;
 					break;
 				case 2: 
-					b1="¥¬";
-					r ="§AÄ¹"; 
+					b1="å¸ƒ";
+					r ="ä½ è´"; 
 					break;									
 			}
 			break;
 		case 1:
-			a1="¥ÛÀY";
+			a1="çŸ³é ­";
 			switch(b){
 				case 0:
-					b1="°Å¤M";
-					r ="§AÄ¹" ;
+					b1="å‰ªåˆ€";
+					r ="ä½ è´" ;
 					break;
 				case 1:
-					b1="¥ÛÀY";
-					r ="¥­¤â" ;
+					b1="çŸ³é ­";
+					r ="å¹³æ‰‹" ;
 					break;
 				case 2: 
-					b1="¥¬";
-					r ="¹q¸£Ä¹";
+					b1="å¸ƒ";
+					r ="é›»è…¦è´";
 					break; 			
 			}
 			break;
 		case 2:
-			a1="¥¬";
+			a1="å¸ƒ";
 			switch(b){
 				case 0:
-					b1="°Å¤M";
-					r ="¹q¸£Ä¹"; 
+					b1="å‰ªåˆ€";
+					r ="é›»è…¦è´"; 
 					break;
 				case 1:
-					b1="¥ÛÀY";
-					r ="§AÄ¹"; 
+					b1="çŸ³é ­";
+					r ="ä½ è´"; 
 					break;
 				case 2: 
-					b1="¥¬";
-					r ="¥­¤â";
+					b1="å¸ƒ";
+					r ="å¹³æ‰‹";
 					break; 				
 			}
 			break;
  	}
- 	cout<<"§A¥X:"<<a<<a1<<", ¹q¸£¥X¡G"<<b<<b1<<",  µ²ªG¡G"<<r;
+ 	cout<<"ä½ å‡º:"<<a<<a1<<", é›»è…¦å‡ºï¼š"<<b<<b1<<",  çµæœï¼š"<<r;
 	return 0;
 }
+
 
