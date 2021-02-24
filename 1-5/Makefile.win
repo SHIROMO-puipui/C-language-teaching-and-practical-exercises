@@ -26,3 +26,4 @@ $(BIN): $(OBJ)
 
 1-2.o: 1-2.cpp
 	$(CPP) -c 1-2.cpp -o 1-2.o $(CXXFLAGS)
+
