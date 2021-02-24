@@ -1,0 +1,8 @@
+當函式本身又呼叫自己的函式稱為遞迴，撰寫遞迴函式必須注意函式中一定要有結束點，否則程式會形成無窮迴圈而造成錯誤
+
+When the function it calls its own correspondence called recursion, writing a recursive letter must pay attention
+ to the end point in the correspondence, otherwise the program will form an infinite loop and cause errors.
+
+1-1題目>>
+由鍵盤輸入一個數字n，利用遞迴來計算n階層
+
