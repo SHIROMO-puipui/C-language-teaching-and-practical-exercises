@@ -1,13 +1,13 @@
 #include <iostream>
 
 using namespace std;
-int Factorial(int n){ //Factoria>>¶¥­¼ 
+int Factorial(int n){ //Factoria>>éšä¹˜ 
 	if (n==0)
-	return 1;//·ín=0¡A¶Ç¦^1µ²§ô»¼°j 
+	return 1;//ç•¶n=0ï¼Œå‚³å›1çµæŸéè¿´ 
 	else
 	return n * Factorial(n-1);
-	/* "n * Factorial(n-1)"­Yn=10«h¬°10*Factorial(9)¡A
-	·ín=9§Y¬°9* Factorial(8)...¥H¦¹Ãş±À¡A
+	/* "n * Factorial(n-1)"è‹¥n=10å‰‡ç‚º10*Factorial(9)ï¼Œ
+	ç•¶n=9å³ç‚º9* Factorial(8)...ä»¥æ­¤é¡æ¨ï¼Œ
 	 
 	             10!=10*9*8*7*6*5*4*3*2*1
 	*/ 
@@ -18,10 +18,11 @@ int main()
 {
 	int n,Total;
 	printf("INPUT n: ");
-	scanf("%d",&n); //"&n"±NÅÜ¼Æ¦a§}¨ú¥X "*"¬°¨ú¥X¤º®e
-	// scanf¬°¿é¤J¸ê®Æprintf¥i¿é¥Xµ²ªG
+	scanf("%d",&n); //"&n"å°‡è®Šæ•¸åœ°å€å–å‡º "*"ç‚ºå–å‡ºå…§å®¹
+	// scanfç‚ºè¼¸å…¥è³‡æ–™printfå¯è¼¸å‡ºçµæœ
 	 
 	Total = Factorial(n); 
-	printf("n!=%d",Total); // %d¾ã¼Æ¿é¥X 
+	printf("n!=%d",Total); // %dæ•´æ•¸è¼¸å‡º 
     return 0;
 }
+
